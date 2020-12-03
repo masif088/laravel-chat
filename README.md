@@ -1,38 +1,69 @@
-# Live Chat con Laravel 7 + Livewire + Pusher
-_Se trata de un Chat en Tiempo Real con notificaciones Push (pusher), es una Aplicación de ejemplo para la demostración del funcionamiento de Laravel 7 con Livewire y Pusher._
+# Live Chat with Laravel 7 + Livewire + Pusher
+_It is a Real Time Chat with Push notifications (pusher), it is an example Application for the demonstration of the operation of Laravel 7 with Livewire and Pusher._
 
-## Contenido
+## Content
 
-_Para este proyecto se han utilizado las siguientes herramientas:_
-* [Laravel](https://laravel.com/) - El framework web más usado actualmente, y mi favorito!.
-* [Livewire](https://laravel-livewire.com/) - Si no sabes qué es, con este proyecto lo verás de manera **Práctica**. 
-* [Pusher](https://pusher.com/) - Envío de Notificaciones Push en Web (fácil integración con Laravel)
+_The following tools have been used for this project: _
+* [Laravel] (https://laravel.com/) - The most used web framework currently, and my favorite !.
+* [Livewire] (https://laravel-livewire.com/) - If you don't know what it is, with this project you will see it in a ** Practical ** way.
+* [Pusher] (https://pusher.com/) - Sending Push Notifications on the Web (easy integration with Laravel)
 
 ### Livewire
-Se utiliza para su demostración de capacidades. Es un complemento que, desde mi punto de vista, ha llegado para quedarse. Con [Livewire](https://laravel-livewire.com/) puedes, de forma super sencilla y rápida, crear aplicaciónes al estilo VUE | React | Angular pero sin salirte de la línea de **Laravel**.
+It is used for your demonstration of capabilities. It is a complement that, from my point of view, is here to stay. With [Livewire] (https://laravel-livewire.com/) you can, in a super easy and fast way, create VUE | React | Angular but without leaving the ** Laravel ** line.
 
-Puedes manejar
+Can you drive
 
-* Eventos
-* Acciones
-* y mucho más
+* Events
+* Actions
+* and much more
 
-**Sin la necesidad de que aprendas o tengas que utilizar otros lenguajes fuera de PHP con Laravel** (y un poquito de JS)
+** Without the need for you to learn or have to use other languages ​​outside of PHP with Laravel ** (and a little bit of JS)
 
 ### Pusher
-_Se utiliza el servicio gratuito de Pusher con Laravel para envío de Push._
+_The free Pusher service with Laravel is used to send Push._
 
-_[Pusher](https://pusher.com/) es gratis para el envío de hasta 200.000 notificaciones diarias por canal_
+_ [Pusher] (https://pusher.com/) is free to send up to 200,000 notifications per day per channel_
 
-Con [Pusher](https://pusher.com/) puedes transformar tu aplicación web con Laravel en una aplicación "VIVA", generando notificaciones "Push" en tiempo real que favorecen la dinámica de tu web. **Tus clientes te lo agradecerán**.
+With [Pusher] (https://pusher.com/) you can transform your web application with Laravel into a "LIVE" application, generating "Push" notifications in real time that favor the dynamics of your website. ** Your customers will thank you **.
 
-## Capturas
+## Captures
 
-![ScreenShot](https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/master/2020-03-16%2015_42_57-Window.png)
+! [ScreenShot] (https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/master/2020-03-16%2015_42_57-Window.png)
 
 
-## Vídeo Demostrativo
-_Aquí te dejo un vídeo del funcionamiento y algunas explicaciones de este proyecto_
+## Demonstration Video
+_Here I leave you a video of the operation and some explanations of this project_
 
-[![Watch the video](https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/publico/captura_video.png)](https://www.youtube.com/watch?v=bvAPf8z_bDk)
+[! [Watch the video] (https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/publico/captura_video.png)] (https://www.youtube.com/watch?v=bvAPf8z_bDk)
 
+## How to install and demonstration ?
+After clone or download this repository, next step is install all dependency required by laravel and laravel-mix.
+
+```shell
+# install composer-dependency
+$ composer install
+# install npm package
+$ npm install
+# build dev 
+$ npm run dev
+```
+
+Before we start web server make sure we already generate app key, configure `.env` file and do migration.
+
+```shell
+# create copy of .env
+$ cp .env.example .env
+# create laravel key
+$ php artisan key:generate
+# laravel migrate
+$ php artisan migrate
+```
+In .env don't forget for update
+```shell script
+BROADCAST_DRIVER=pusher
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=ap1
+``` 
