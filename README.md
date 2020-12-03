@@ -3,13 +3,13 @@ _It is a Real Time Chat with Push notifications (pusher), it is an example Appli
 
 ## Content
 
-_The following tools have been used for this project: _
-* [Laravel] (https://laravel.com/) - The most used web framework currently, and my favorite !.
-* [Livewire] (https://laravel-livewire.com/) - If you don't know what it is, with this project you will see it in a ** Practical ** way.
-* [Pusher] (https://pusher.com/) - Sending Push Notifications on the Web (easy integration with Laravel)
+_The following tools have been used for this project:_
+* [Laravel](https://laravel.com/) - The most used web framework currently, and my favorite !.
+* [Livewire](https://laravel-livewire.com/) - If you don't know what it is, with this project you will see it in a ** Practical ** way.
+* [Pusher](https://pusher.com/) - Sending Push Notifications on the Web (easy integration with Laravel)
 
 ### Livewire
-It is used for your demonstration of capabilities. It is a complement that, from my point of view, is here to stay. With [Livewire] (https://laravel-livewire.com/) you can, in a super easy and fast way, create VUE | React | Angular but without leaving the ** Laravel ** line.
+It is used for your demonstration of capabilities. It is a complement that, from my point of view, is here to stay. With [Livewire](https://laravel-livewire.com/) you can, in a super easy and fast way, create VUE | React | Angular but without leaving the **Laravel** line.
 
 Can you drive
 
@@ -17,14 +17,14 @@ Can you drive
 * Actions
 * and much more
 
-** Without the need for you to learn or have to use other languages ​​outside of PHP with Laravel ** (and a little bit of JS)
+**Without the need for you to learn or have to use other languages​outside of PHP with Laravel** (and a little bit of JS)
 
 ### Pusher
 _The free Pusher service with Laravel is used to send Push._
 
-_ [Pusher] (https://pusher.com/) is free to send up to 200,000 notifications per day per channel_
+_[Pusher](https://pusher.com/) is free to send up to 200,000 notifications per day per channel_
 
-With [Pusher] (https://pusher.com/) you can transform your web application with Laravel into a "LIVE" application, generating "Push" notifications in real time that favor the dynamics of your website. ** Your customers will thank you **.
+With [Pusher](https://pusher.com/) you can transform your web application with Laravel into a "LIVE" application, generating "Push" notifications in real time that favor the dynamics of your website. **Your customers will thank you**.
 
 ## Captures
 
