@@ -6,88 +6,88 @@ use Livewire\Component;
 
 class ChatList extends Component
 {
-    public $usuario;
-    public $mensajes;
-    protected $ultimoId;
-        
-    protected $listeners = ['mensajeRecibido', 'cambioUsuario'];
-    
+    public $user;
+    public $messages;
+    protected $lastId;
+
+    protected $listeners = ['messageReceived', 'changeUser'];
+
     public function mount()
     {
-        $ultimoId = 0;
-        $this->mensajes = [];                       
-        
-        $this->usuario = request()->query('usuario', $this->usuario) ?? "";                   
+        $lastId = 0;
+        $this->messages = [];
+
+        $this->user = request()->query('user', $this->user) ?? "";
     }
 
-    public function  mensajeRecibido($data)
-    {        
-        $this->actualizarMensajes($data);
-    }
-
-    public function cambioUsuario($usuario)
+    public function  messageReceived($data)
     {
-        $this->usuario = $usuario;
+        $this->updateMessages($data);
     }
 
-    public function actualizarMensajes($data)
-    {                
-        if($this->usuario != "")
+    public function changeUser($user)
+    {
+        $this->user = $user;
+    }
+
+    public function updateMessages($data)
+    {
+        if($this->user != "")
         {
             // El contenido de la Push
             //$data = \json_decode(\json_encode($data));
-            
-            $mensajes = \App\Chat::orderBy("created_at", "desc")->take(5)->get();
-            //$this->mensajes = [];            
 
-            foreach($mensajes as $mensaje)
+            $messages = \App\Chat::orderBy("created_at", "desc")->take(5)->get();
+            //$this->messages = [];
+
+            foreach($messages as $message)
             {
-                if($this->ultimoId < $mensaje->id)
+                if($this->lastId < $message->id)
                 {
-                    $this->ultimoId = $mensaje->id;
-                    
+                    $this->lastId = $message->id;
+
                     $item = [
-                        "id" => $mensaje->id,
-                        "usuario" => $mensaje->usuario,
-                        "mensaje" => $mensaje->mensaje,
-                        "recibido" => ($mensaje->usuario != $this->usuario),
-                        "fecha" => $mensaje->created_at->diffForHumans()
+                        "id" => $message->id,
+                        "user" => $message->user,
+                        "message" => $message->message,
+                        "received" => ($message->user != $this->user),
+                        "date" => $message->created_at->diffForHumans()
                     ];
-    
-                    array_unshift($this->mensajes, $item);                
-                    //array_push($this->mensajes, $item);                
+
+                    array_unshift($this->messages, $item);
+                    //array_push($this->messages, $item);
                 }
-                
+
             }
 
-            if(count($this->mensajes) > 5)
+            if(count($this->messages) > 5)
             {
-                array_pop($this->mensajes);
+                array_pop($this->messages);
             }
         }
         else
-        {            
-            $this->emit('solicitaUsuario');
+        {
+            $this->emit('requestUser');
         }
     }
 
-    public function resetMensajes()
+    public function resetMessages()
     {
-        $this->mensajes = [];
-        $this->actualizarMensajes();
+        $this->messages = [];
+        $this->updateMessages();
     }
 
     public function dydrate()
     {
-        if($this->usuario == "")
+        if($this->user == "")
         {
             // Le pedimos el uisuario al otro componente
-            $this->emit('solicitaUsuario');
+            $this->emit('requestUser');
         }
     }
 
     public function render()
-    {        
+    {
         return view('livewire.chat-list');
     }
 }

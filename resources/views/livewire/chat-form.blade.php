@@ -5,74 +5,74 @@
         <h2 class="pt-0 mt-0"><strong>Laravel7 + LiveWire + Pusher</strong></h2>
     </a>
 
-    <!-- El Usuario -->
+    <!-- El User -->
     <div class="form-group">
-        <label for="usuario"><strong>Usuario</strong></label>
-        <input 
-            type="text" 
-            wire:model="usuario" 
-            class="form-control" 
-            id="usuario">                
-        
+        <label for="user"><strong>User</strong></label>
+        <input
+            type="text"
+            wire:model="user"
+            class="form-control"
+            id="user">
+
         <!-- Validación -->
-        @error("usuario") 
-            <small class="text-danger">{{ $message }}</small> 
-        @else 
-            <small class="text-muted">Tu nombre: {{$usuario}}</small> 
+        @error("user")
+            <small class="text-danger">{{ $message }}</small>
+        @else
+            <small class="text-muted">Your name: {{$user}}</small>
         @enderror
     </div>
 
-    <!-- Mensaje de Chat a Enviar -->
+    <!-- Message de Chat a Send -->
     <div class="form-group">
-        <label for="mensaje"><strong>Mensaje</strong></label>
-        <input type="text" 
-            wire:model="mensaje" 
-            wire:keydown.enter="enviarMensaje"                         
-            class="form-control" 
-            id="mensaje">
-        
+        <label for="message"><strong>Message</strong></label>
+        <input type="text"
+            wire:model="message"
+            wire:keydown.enter="sendMessage"
+            class="form-control"
+            id="message">
+
         <!-- Validación -->
-        @error("mensaje") 
-            <small class="text-danger">{{ $message }}</small> 
-        @else 
-            <small class="text-muted">Escribe tu mensaje y teclea <code>ENTER</code> para enviarlo</small> 
+        @error("message")
+            <small class="text-danger">{{ $message }}</small>
+        @else
+            <small class="text-muted">Write your message and type <code>ENTER</code> to send it</small>
         @enderror
     </div>
-        
+
     <div wire:offline class="alert alert-danger text-center">
-        <strong>Se ha perdido la conexión a Internet</strong>
+        <strong>Internet connection lost</strong>
     </div>
-    
+
     <div class="row">
         <div class="col-6">
-            <!-- Mensajes de alerta -->    
+            <!-- Messages de alerta -->
             <div style="position: absolute;"
-            class="alert alert-success collapse" 
-            role="alert" 
-            id="avisoSuccess"       
-            >Se ha enviado</div>        
-        </div>    
+            class="alert alert-success collapse"
+            role="alert"
+            id="noticeSuccess"
+            >Is sent</div>
+        </div>
         <div class="col-6 pt-2 text-right">
-            <button 
-                class="btn btn-primary" 
-                wire:click="enviarMensaje"
+            <button
+                class="btn btn-primary"
+                wire:click="sendMessage"
                 wire:loading.attr="disabled"
-                wire:offline.attr="disabled"            
-            >Enviar Mensaje</button>
-        </div>        
+                wire:offline.attr="disabled"
+            >Send Message</button>
+        </div>
     </div>
-    
+
     <script>
-                 
+
         // Esto lo recibimos en JS cuando lo emite el componente
         // El evento "enviadoOK"
         $( document ).ready(function() {
             window.livewire.on('enviadoOK', function () {
-                $("#avisoSuccess").fadeIn("slow");                
-                setTimeout(function(){ $("#avisoSuccess").fadeOut("slow"); }, 3000);                                
+                $("#noticeSuccess").fadeIn("slow");
+                setTimeout(function(){ $("#noticeSuccess").fadeOut("slow"); }, 3000);
             });
         });
-        
+
     </script>
 
 </div>

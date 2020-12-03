@@ -10,19 +10,19 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class NuevoMensaje implements ShouldBroadcast
+class NewMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $usuario;
-    public $mensaje;
+    public $user;
+    public $message;
 
-    public function __construct($usuario, $mensaje)
+    public function __construct($user, $message)
     {
-        $this->usuario = $usuario;
-        $this->mensaje = $mensaje;
+        $this->user = $user;
+        $this->message = $message;
     }
-    
+
     public function broadcastOn()
     {
         return ["chat-channel"];
