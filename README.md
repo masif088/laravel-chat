@@ -28,13 +28,13 @@ With [Pusher] (https://pusher.com/) you can transform your web application with 
 
 ## Captures
 
-! [ScreenShot] (https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/master/2020-03-16%2015_42_57-Window.png)
+![ScreenShot](https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/master/2020-03-16%2015_42_57-Window.png)
 
 
 ## Demonstration Video
 _Here I leave you a video of the operation and some explanations of this project_
 
-[! [Watch the video] (https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/publico/captura_video.png)] (https://www.youtube.com/watch?v=bvAPf8z_bDk)
+[![Watch the video](https://raw.githubusercontent.com/emanuelnogueiras/laravel-chat/publico/captura_video.png)](https://www.youtube.com/watch?v=bvAPf8z_bDk)
 
 ## How to install and demonstration ?
 After clone or download this repository, next step is install all dependency required by laravel and laravel-mix.
